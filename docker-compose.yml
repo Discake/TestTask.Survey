@@ -1,0 +1,20 @@
+services:
+  testtask.survey:
+    image: ${DOCKER_REGISTRY-}testtasksurvey
+    build:
+      context: .
+      dockerfile: TestTask.Survey/Dockerfile
+  testtask.survey.db:
+    container_name: testtask.survey.db
+    ports:
+      - "5432:5432" # map port 5432 on the container to port 5432 on the host
+                    # (the default postgres port, change if needed)
+    image: postgres:16.8-alpine3.20
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: surveydb
+    volumes:
+      - survey_data:/var/lib/postgresql/data
+volumes:
+  survey_data:
