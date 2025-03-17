@@ -1,6 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
 using SurveyDb;
+using TestTask.Survey.Services.Implementations;
+using TestTask.Survey.Services.Interfaces;
 
 namespace TestTask.Survey
 {
@@ -14,6 +16,8 @@ namespace TestTask.Survey
                 options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Add services to the container.
+
+            builder.Services.AddScoped<ISaveResponseService, SaveResponseService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
