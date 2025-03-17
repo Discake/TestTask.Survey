@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TestTask.Survey.Models
+namespace TestTask.Survey.Data.Models
 {
-    [Table("Answers")]
+    [Table("answers")]
     public class Answer
     {
         [Column("id")]

@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json;
 
-namespace TestTask.Survey.Models
+namespace TestTask.Survey.Data.Models
 {
-    [Table("Interviews")]
+    [Table("interviews")]
     public class Interview
     {
         [Column("id")]
