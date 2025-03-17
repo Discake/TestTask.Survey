@@ -23,6 +23,7 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Data\Models\" />
+    <Folder Include="Data\Dtos\" />
   </ItemGroup>
 
 </Project>
