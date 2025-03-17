@@ -39,6 +39,12 @@ BEGIN
             END LOOP;
 
         END LOOP;
+        INSERT INTO interviews (survey_id, start_time, status)
+        VALUES (
+            1,
+            CURRENT_TIMESTAMP - INTERVAL '5 minutes',
+            'in_progress'
+        );
     END;
 END
 $$;
